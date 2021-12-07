@@ -1,16 +1,16 @@
 ---
  - hosts: all
    become: true
-   
+
    tasks:
-    - name: Stop previous Docker Container 
-	  shell: docker stop webapp_test
-	  
-	- name: Remove previous Docker Container
-	  shell: docker rm -f webapp_test
-	  
-	- name: Remove previous Docker Image
-	  shell: docker rmi -f srinku28/webapp_test
-	  
-	- name: Run container Image
-	  shell: docker run -d --name webapp_test -p 8083:8080 srinku28/webapp_test 
+    - name: Stop previous Docker Container
+      shell: docker stop webapp_test
+
+    - name: Remove previous Docker Container
+      shell: docker rm -f webapp_test
+
+    - name: Remove previous Docker Image
+      shell: docker rmi -f srinku28/webapp_test
+
+    - name: Run container Image
+      shell: docker run -d --name webapp_test -p 8083:8080 srinku28/webapp_test 
